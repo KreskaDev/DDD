@@ -1,0 +1,85 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{AD11BFE1-B825-4484-AAC3-C4B5C79EA94F}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>DddSob.DomainInfra</RootNamespace>
+    <AssemblyName>DddSob.DomainInfra</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Autofac, Version=4.8.1.0, Culture=neutral, PublicKeyToken=17863af14b0044da, processorArchitecture=MSIL">
+      <HintPath>..\packages\Autofac.4.8.1\lib\net45\Autofac.dll</HintPath>
+    </Reference>
+    <Reference Include="CSharpFunctionalExtensions, Version=1.10.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\CSharpFunctionalExtensions.1.10.0\lib\net461\CSharpFunctionalExtensions.dll</HintPath>
+    </Reference>
+    <Reference Include="MediatR, Version=4.1.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\MediatR.4.1.0\lib\net45\MediatR.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Model\Abstraction\IAggregateChangeTracker.cs" />
+    <Compile Include="Model\Abstraction\IAggregateInitializer.cs" />
+    <Compile Include="Model\Abstraction\IAggregateRootEntity.cs" />
+    <Compile Include="Model\Aggregate.cs" />
+    <Compile Include="Model\AggregateBuilder.cs" />
+    <Compile Include="Model\AggregateEntity.cs" />
+    <Compile Include="Model\AggregateNotFoundException.cs" />
+    <Compile Include="Model\AggregateRootEntity.cs" />
+    <Compile Include="Model\AggregateSourceException.cs" />
+    <Compile Include="DomainInfraModule.cs" />
+    <Compile Include="EventRouter\IConfigureInstanceEventRouter.cs" />
+    <Compile Include="EventRouter\IInstanceEventRouter.cs" />
+    <Compile Include="EventRouter\InstanceEventRouter.cs" />
+    <Compile Include="EventRecorder.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="UnitOfWork\IUnitOfWork.cs" />
+    <Compile Include="UnitOfWork\UnitOfWork.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\DddSob.Messages.CQRS.Mediatr\DddSob.Messages.CQRS.Mediatr.csproj">
+      <Project>{57FD3B19-53C6-4F8A-BDD5-D4BE45D2D86A}</Project>
+      <Name>DddSob.Messages.CQRS.Mediatr</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DddSob.Storage.Persistance.Nh\DddSob.Storage.Persistance.Nh.csproj">
+      <Project>{983BE94D-24F9-4F82-8931-24AB4C23D1EC}</Project>
+      <Name>DddSob.Storage.Persistance.Nh</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
