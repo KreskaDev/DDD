@@ -32,67 +32,28 @@ namespace DddSob.Context.NoRelation.Tests
             //var lukasId = await InviteUserStory(rehafitId, "lukas@rehafit.com");
 
 
-
+            ShipmentCargoTraning();
         }
 
-        //private async Task<Guid> CreateShopUserStory(Guid rehafitId, string companyName)
-        //{
-        //    var shopId = await Mediator
-        //        .Send(new CreateShopCommand(rehafitId, companyName));
-
-        //    var toyResult = await Mediator
-        //        .Send(new AddProductCommand("Toy", 10, Currency.Pln));
-        //    toyResult.IsSuccess.Should().BeTrue();
-
-        //    return shopId.Value;
-        //}
-
-        public void MakeOrders()
+        private void ShipmentCargoTraning()
         {
-            //var repResult = await _contractorsDirector
-            //    .AddContractor("Red eye piranhas", "23482359872983", "address");
-            //repResult.IsSuccess.Should().BeTrue();
+            
 
-            ////UserStory
-            //var newOrderResult = await _shopDirector
-            //    .PlaceNewOrder(repResult.Value);
-            //newOrderResult.IsSuccess.Should().BeTrue();
 
-            //var addOrderLineResult = await _shopDirector
-            //    .AddOrderLine(newOrderResult.Value, toyResult.Value, 10);
-            //addOrderLineResult.IsSuccess.Should().BeTrue();
 
-            //var finalizeOrderResult = await _shopDirector
-            //    .FinalizeOrder(newOrderResult.Value);
-            //finalizeOrderResult.IsSuccess.Should().BeTrue();
-
-            ////check read model
-            //var totalAmount = _readModelOperations
-            //    .GetBuyerTotalPaidAmount(repResult.Value);
-            //totalAmount.Should().Be(100);
         }
 
         private async Task<Company> CreateCompanyUserStory(Guid ownerId, string companyName)
         {
             var addCompanyRehafitResult = await Mediator
-                .Send(new RegisterCompanyCommand(ownerId, companyName));
-            addCompanyRehafitResult.IsSuccess.Should().BeTrue();
+                .Send(new RegisterCompanyCommand(ownerId, companyName))
+                .OnFailure(e => throw new Exception(e));
+
+            addCompanyRehafitResult
+                .IsSuccess.Should()
+                .BeTrue();
+
             return addCompanyRehafitResult.Value;
-        }
-
-        private async Task<Guid> InviteUserStory(Guid companyId, string email)
-        {
-            var userInvitationResult = await Mediator
-                .Send(new InviteUserCommand(companyId, email));
-            userInvitationResult.IsSuccess.Should().BeTrue();
-
-            var invitedUserId = await ReadModelOperations
-                .GetUserIdByEmail(email);
-
-            //await _userService.AcceptInvitation(invitedUserId, )
-
-
-            return userInvitationResult.Value;
         }
 
         private async Task<User> UserSimpleRegistrationUserStory(string email, string password)
@@ -119,11 +80,66 @@ namespace DddSob.Context.NoRelation.Tests
             return userRegistrationResult.Value;
         }
 
+        //private async Task<Guid> CreateShopUserStory(Guid rehafitId, string companyName)
+        //{
+        //    var shopId = await Mediator
+        //        .Send(new CreateShopCommand(rehafitId, companyName));
+
+        //    var toyResult = await Mediator
+        //        .Send(new AddProductCommand("Toy", 10, Currency.Pln));
+        //    toyResult.IsSuccess.Should().BeTrue();
+
+        //    return shopId.Value;
+        //}
+
+        //public void MakeOrders()
+        //{
+        //    //var repResult = await _contractorsDirector
+        //    //    .AddContractor("Red eye piranhas", "23482359872983", "address");
+        //    //repResult.IsSuccess.Should().BeTrue();
+
+        //    ////UserStory
+        //    //var newOrderResult = await _shopDirector
+        //    //    .PlaceNewOrder(repResult.Value);
+        //    //newOrderResult.IsSuccess.Should().BeTrue();
+
+        //    //var addOrderLineResult = await _shopDirector
+        //    //    .AddOrderLine(newOrderResult.Value, toyResult.Value, 10);
+        //    //addOrderLineResult.IsSuccess.Should().BeTrue();
+
+        //    //var finalizeOrderResult = await _shopDirector
+        //    //    .FinalizeOrder(newOrderResult.Value);
+        //    //finalizeOrderResult.IsSuccess.Should().BeTrue();
+
+        //    ////check read model
+        //    //var totalAmount = _readModelOperations
+        //    //    .GetBuyerTotalPaidAmount(repResult.Value);
+        //    //totalAmount.Should().Be(100);
+        //}
+
+        
+
+        //private async Task<Guid> InviteUserStory(Guid companyId, string email)
+        //{
+        //    var userInvitationResult = await Mediator
+        //        .Send(new InviteUserCommand(companyId, email));
+        //    userInvitationResult.IsSuccess.Should().BeTrue();
+
+        //    var invitedUserId = await ReadModelOperations
+        //        .GetUserIdByEmail(email);
+
+        //    //await _userService.AcceptInvitation(invitedUserId, )
+
+
+        //    return userInvitationResult.Value;
+        //}
+
+
 
     }
 
-    public class UserSimpleRegistrationUserStory
-    {
+    //public class UserSimpleRegistrationUserStory
+    //{
 
-    }
+    //}
 }

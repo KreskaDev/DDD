@@ -79,40 +79,43 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Directors\Contractors\ContractorsDirector.cs" />
-    <Compile Include="Directors\Warehouse\WarehouseDirector.cs" />
-    <Compile Include="Domain\_ExcludedDomains\ErpDomain\CompanyBC\Events\NewCompanyEvent.cs" />
-    <Compile Include="Domain\_ExcludedDomains\ErpDomain\CompanyBC\Model\Company.cs" />
-    <Compile Include="Domain\_ExcludedDomains\ErpDomain\CompanyBC\RegisterCompanyCommand.cs" />
-    <Compile Include="Domain\_ExcludedDomains\ErpDomain\CompanyBC\Services\CompanyDirector.cs" />
-    <Compile Include="Domain\_ExcludedDomains\IdmDomain\UsersBC\UserMappings.cs" />
+    <Compile Include="App\Directors\Contractors\ContractorsDirector.cs" />
+    <Compile Include="App\Directors\Warehouse\WarehouseDirector.cs" />
+    <Compile Include="App\Domain\_ExcludedDomains\ErpDomain\CompanyBC\Events\NewCompanyEvent.cs" />
+    <Compile Include="App\Domain\_ExcludedDomains\ErpDomain\CompanyBC\Model\Company.cs" />
+    <Compile Include="App\Domain\_ExcludedDomains\ErpDomain\CompanyBC\RegisterCompanyCommand.cs" />
+    <Compile Include="App\Domain\_ExcludedDomains\ErpDomain\CompanyBC\Services\CompanyDirector.cs" />
+    <Compile Include="App\Domain\_ExcludedDomains\IdmDomain\UsersBC\UserMappings.cs" />
     <Compile Include="MediatrModule.cs" />
-    <Compile Include="BussinesLogic\IShortestDeliveryPath.cs" />
-    <Compile Include="BussinesLogic\ITaxCalculatror.cs" />
-    <Compile Include="BussinesLogic\ShortestDeliveryPath.cs" />
-    <Compile Include="Connectivity\LocalDbInfo.cs" />
-    <Compile Include="Domain\Common\Services\SystemTime.cs" />
-    <Compile Include="BussinesLogic\TaxCalculatror.cs" />
-    <Compile Include="Domain\_ExcludedDomains\IdmDomain\TenantsBC\Commands\InviteUserCommand.cs" />
-    <Compile Include="Domain\_ExcludedDomains\IdmDomain\UsersBC\Commands\RegisterUserCommand.cs" />
-    <Compile Include="Domain\_ExcludedDomains\IdmDomain\UsersBC\Commands\VerifyUserEmailCommand.cs" />
-    <Compile Include="Domain\_ExcludedDomains\IdmDomain\TenantsBC\Events\NewTenantEvent.cs" />
-    <Compile Include="Domain\_ExcludedDomains\IdmDomain\TenantsBC\Model\Tenant.cs" />
-    <Compile Include="Domain\_ExcludedDomains\IdmDomain\Sagas\TenantUserLifetimeSaga.cs" />
-    <Compile Include="Domain\_ExcludedDomains\IdmDomain\TenantsBC\Events\UserInvitedToTenantEvent.cs" />
-    <Compile Include="Domain\_ExcludedDomains\IdmDomain\TenantsBC\Services\TenantCreationDirector.cs" />
-    <Compile Include="BussinesLogic\IEmailVerificationTokenGenerator.cs" />
-    <Compile Include="BussinesLogic\IInvitationService.cs" />
-    <Compile Include="Domain\_ExcludedDomains\IdmDomain\UsersBC\Services\UserRegistrationDirector.cs" />
-    <Compile Include="Domain\_ExcludedDomains\IdmDomain\UsersBC\Model\Email.cs" />
-    <Compile Include="Domain\_ExcludedDomains\IdmDomain\UsersBC\Model\User.cs" />
-    <Compile Include="Domain\_ExcludedDomains\IdmDomain\UsersBC\Events\UserRegisteredEvent.cs" />
-    <Compile Include="Domain\_ExcludedDomains\IdmDomain\UsersBC\Events\UserRegistrationCompleateEvent.cs" />
-    <Compile Include="Domain\Common\Models\Currency.cs" />
-    <Compile Include="Domain\Common\Models\Money.cs" />
-    <Compile Include="Domain\Common\Services\ISystemTime.cs" />
+    <Compile Include="App\BussinesLogic\IShortestDeliveryPath.cs" />
+    <Compile Include="App\BussinesLogic\ITaxCalculatror.cs" />
+    <Compile Include="App\BussinesLogic\ShortestDeliveryPath.cs" />
+    <Compile Include="App\Connectivity\LocalDbInfo.cs" />
+    <Compile Include="App\Domain\Common\Services\SystemTime.cs" />
+    <Compile Include="App\BussinesLogic\TaxCalculatror.cs" />
+    <Compile Include="App\Domain\_ExcludedDomains\IdmDomain\TenantsBC\Commands\InviteUserCommand.cs" />
+    <Compile Include="App\Domain\_ExcludedDomains\IdmDomain\UsersBC\Commands\RegisterUserCommand.cs" />
+    <Compile Include="App\Domain\_ExcludedDomains\IdmDomain\UsersBC\Commands\VerifyUserEmailCommand.cs" />
+    <Compile Include="App\Domain\_ExcludedDomains\IdmDomain\TenantsBC\Events\NewTenantEvent.cs" />
+    <Compile Include="App\Domain\_ExcludedDomains\IdmDomain\TenantsBC\Model\Tenant.cs" />
+    <Compile Include="App\Domain\_ExcludedDomains\IdmDomain\Sagas\TenantUserLifetimeSaga.cs" />
+    <Compile Include="App\Domain\_ExcludedDomains\IdmDomain\TenantsBC\Events\UserInvitedToTenantEvent.cs" />
+    <Compile Include="App\Domain\_ExcludedDomains\IdmDomain\TenantsBC\Services\TenantCreationDirector.cs" />
+    <Compile Include="App\BussinesLogic\IEmailVerificationTokenGenerator.cs" />
+    <Compile Include="App\BussinesLogic\IInvitationService.cs" />
+    <Compile Include="App\Domain\_ExcludedDomains\IdmDomain\UsersBC\Services\UserRegistrationDirector.cs" />
+    <Compile Include="App\Domain\_ExcludedDomains\IdmDomain\UsersBC\Model\Email.cs" />
+    <Compile Include="App\Domain\_ExcludedDomains\IdmDomain\UsersBC\Model\User.cs" />
+    <Compile Include="App\Domain\_ExcludedDomains\IdmDomain\UsersBC\Events\UserRegisteredEvent.cs" />
+    <Compile Include="App\Domain\_ExcludedDomains\IdmDomain\UsersBC\Events\UserRegistrationCompleateEvent.cs" />
+    <Compile Include="App\Domain\Common\Models\Currency.cs" />
+    <Compile Include="App\Domain\Common\Models\Money.cs" />
+    <Compile Include="App\Domain\Common\Services\ISystemTime.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="ReadModel\ReadModelOperations.cs" />
+    <Compile Include="App\ReadModel\ReadModelOperations.cs" />
+    <Compile Include="ShipmentCargoTraning\Domain\Port.cs" />
+    <Compile Include="ShipmentCargoTraning\Domain\Ship.cs" />
+    <Compile Include="ShipmentCargoTraning\Domain\Shipment.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
@@ -131,9 +134,9 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Domain\Contexts\ShopDomain\" />
-    <Folder Include="Domain\_ExcludedDomains\IdmDomain\TenantsBC\Queries\" />
-    <Folder Include="Domain\_ExcludedDomains\IdmDomain\UsersBC\Queries\" />
+    <Folder Include="App\Domain\Contexts\ShopDomain\" />
+    <Folder Include="App\Domain\_ExcludedDomains\IdmDomain\TenantsBC\Queries\" />
+    <Folder Include="App\Domain\_ExcludedDomains\IdmDomain\UsersBC\Queries\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
