@@ -81,6 +81,10 @@
   <ItemGroup>
     <Compile Include="Directors\Contractors\ContractorsDirector.cs" />
     <Compile Include="Directors\Warehouse\WarehouseDirector.cs" />
+    <Compile Include="Domain\_ExcludedDomains\ErpDomain\CompanyBC\Events\NewCompanyEvent.cs" />
+    <Compile Include="Domain\_ExcludedDomains\ErpDomain\CompanyBC\Model\Company.cs" />
+    <Compile Include="Domain\_ExcludedDomains\ErpDomain\CompanyBC\RegisterCompanyCommand.cs" />
+    <Compile Include="Domain\_ExcludedDomains\ErpDomain\CompanyBC\Services\CompanyDirector.cs" />
     <Compile Include="Domain\_ExcludedDomains\IdmDomain\UsersBC\UserMappings.cs" />
     <Compile Include="MediatrModule.cs" />
     <Compile Include="BussinesLogic\IShortestDeliveryPath.cs" />
@@ -127,7 +131,7 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Domain\Contexts\" />
+    <Folder Include="Domain\Contexts\ShopDomain\" />
     <Folder Include="Domain\_ExcludedDomains\IdmDomain\TenantsBC\Queries\" />
     <Folder Include="Domain\_ExcludedDomains\IdmDomain\UsersBC\Queries\" />
   </ItemGroup>

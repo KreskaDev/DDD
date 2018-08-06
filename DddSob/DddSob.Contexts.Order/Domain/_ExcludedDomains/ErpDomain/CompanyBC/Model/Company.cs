@@ -2,7 +2,7 @@
 using System.Threading.Tasks;
 using CSharpFunctionalExtensions;
 using DddSob.Contexts.NoRelation.Domain._ExcludedDomains.ErpDomain.CompanyBC.Events;
-using DddSob.DomainInfra.Aggregates;
+using DddSob.DomainInfra.Model;
 
 namespace DddSob.Contexts.NoRelation.Domain._ExcludedDomains.ErpDomain.CompanyBC.Model
 {
@@ -17,8 +17,8 @@ namespace DddSob.Contexts.NoRelation.Domain._ExcludedDomains.ErpDomain.CompanyBC
             ApplyChange<Company>(@event);
         }
 
-        public Guid OwnerId { get; protected set; }
-        public string Name { get; protected set; }
+        public virtual Guid OwnerId { get; protected set; }
+        public virtual string Name { get; protected set; }
 
         protected Company()
         {

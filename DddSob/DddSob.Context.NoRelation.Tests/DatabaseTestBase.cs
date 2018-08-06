@@ -23,49 +23,16 @@ namespace DddSob.Context.NoRelation.Tests
         protected DatabaseTestBase()
         {
             Fixture = new Fixture();
-            //var dbInfo = DbInfoSubstitute.CreateLocalDbInfo(dbServer.ConnectionString);
-
-            //dbServer.CreateSchema(new SchemaMigrator(), dbInfo);
-
-            //var dbInfo = new LocalDbInfo();
-            //_provider = GetConnector(dbInfo);
-            //SeedData(Connector, BucketTypeDbModel.BucketTypeDbModels);
-
             Container = CreateContainer();
 
-            //var dbServer = Container.Resolve<DbServer>();
             var dbPersister = Container.Resolve<IDataBasePersister>();
             dbPersister.RecreateDb();
 
-            //dbServer.CreateSchema(new (), dbInfo);
-
-            //var dbInfo = new LocalDbInfo();
-            //_provider = GetConnector(dbInfo);
             //SeedData(Connector, BucketTypeDbModel.BucketTypeDbModels);
 
             Mediator = Container.Resolve<IMediator>();
             ReadModelOperations = Container.Resolve<IReadModelOperations>();
         }
-
-        //private INhSessionProvider GetConnector(DbInfo dbInfo)
-        //{
-        //    var configuratorMock = Substitute.For<IConfigurator>();
-
-        //    //var sessionProvider = new NhSessionProvider(
-        //    //    new NhDataBasePersister(
-        //    //        ILocalStorageSettings
-        //    //        ));
-
-
-        //    var configuration = new Configurator()
-        //        .CreateConfiguration(dbInfo);
-
-        //    configuratorMock
-        //        .CreateConfiguration<LocalDbInfo>()
-        //        .Returns(configuration);
-
-        //    return new LocalStorageConnector(configuratorMock);
-        //}
 
         private IContainer CreateContainer()
         {

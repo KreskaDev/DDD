@@ -2,6 +2,8 @@
 using System.Threading.Tasks;
 using CSharpFunctionalExtensions;
 using DddSob.Contexts.NoRelation.Domain.Common.Models;
+using DddSob.Contexts.NoRelation.Domain._ExcludedDomains.ErpDomain.CompanyBC;
+using DddSob.Contexts.NoRelation.Domain._ExcludedDomains.ErpDomain.CompanyBC.Model;
 using DddSob.Contexts.NoRelation.Domain._ExcludedDomains.IdmDomain.TenantsBC.Commands;
 using DddSob.Contexts.NoRelation.Domain._ExcludedDomains.IdmDomain.UsersBC.Commands;
 using DddSob.Contexts.NoRelation.Domain._ExcludedDomains.IdmDomain.UsersBC.Model;
@@ -18,16 +20,18 @@ namespace DddSob.Context.NoRelation.Tests
         public async void Execute()
         {
             var kreskadevId = await UserSimpleRegistrationUserStory("kreskadev@gmail.com", "1234");
-            //var piotrId = await UserSimpleRegistrationUserStory("piotr@rehafit.com", "1234");
+            var piotrId = await UserSimpleRegistrationUserStory("piotr@rehafit.com", "1234");
+            var aggaId = await UserSimpleRegistrationUserStory("agga@gmail.com", "1234");
 
-            //var rehafitId = await CreateCompanyUserStory(piotrId, "Rehafit");
+            var rehafitId = await CreateCompanyUserStory(piotrId.Id, "Rehafit");
+            var handmadeId = await CreateCompanyUserStory(aggaId.Id, "HandmadeMiracle");
+
+            //var rehaFitShopId = await CreateShopUserStory(rehafitId, "");
 
 
             //var lukasId = await InviteUserStory(rehafitId, "lukas@rehafit.com");
-            ////var aggaId = await UserSimpleRegistrationUserStory("agga@gmail.com", "1234");
-            ////var handmadeId = await CreateCompanyUserStory(aggaId, "HandmadeMiracle");
 
-            //var rehaFitShopId = await CreateShopUserStory(rehafitId, "");
+
 
         }
 
@@ -35,11 +39,11 @@ namespace DddSob.Context.NoRelation.Tests
         //{
         //    var shopId = await Mediator
         //        .Send(new CreateShopCommand(rehafitId, companyName));
-            
+
         //    var toyResult = await Mediator
         //        .Send(new AddProductCommand("Toy", 10, Currency.Pln));
         //    toyResult.IsSuccess.Should().BeTrue();
-            
+
         //    return shopId.Value;
         //}
 
@@ -68,13 +72,13 @@ namespace DddSob.Context.NoRelation.Tests
             //totalAmount.Should().Be(100);
         }
 
-        //private async Task<Guid> CreateCompanyUserStory(Guid ownerId, string companyName)
-        //{
-        //    var addCompanyRehafitResult = await Mediator
-        //        .Send(new RegisterCompanyCommand(ownerId, companyName));
-        //    addCompanyRehafitResult.IsSuccess.Should().BeTrue();
-        //    return addCompanyRehafitResult.Value;
-        //}
+        private async Task<Company> CreateCompanyUserStory(Guid ownerId, string companyName)
+        {
+            var addCompanyRehafitResult = await Mediator
+                .Send(new RegisterCompanyCommand(ownerId, companyName));
+            addCompanyRehafitResult.IsSuccess.Should().BeTrue();
+            return addCompanyRehafitResult.Value;
+        }
 
         private async Task<Guid> InviteUserStory(Guid companyId, string email)
         {
