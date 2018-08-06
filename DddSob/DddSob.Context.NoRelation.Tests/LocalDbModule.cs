@@ -26,16 +26,16 @@ namespace DddSob.Context.NoRelation.Tests
                 .SingleInstance();
 
             //this is working localDb config
-            //builder
-            //    .Register(context => new LocalDbStorageSettings(dbServer.ConnectionString))
-            //    .As<ILocalStorageSettings>()
-            //    .SingleInstance();
-
-            //this should be an config for attach real db
             builder
-                .Register(context => new LocalDbStorageSettings("data source=.;Initial Catalog=TestDatabase;Integrated Security=True;"))
+                .Register(context => new LocalDbStorageSettings(dbServer.ConnectionString))
                 .As<ILocalStorageSettings>()
                 .SingleInstance();
+
+            //this should be an config for attach real db
+            //builder
+            //    .Register(context => new LocalDbStorageSettings("data source=.;Initial Catalog=TestDatabase;Integrated Security=True;"))
+            //    .As<ILocalStorageSettings>()
+            //    .SingleInstance();
         }
     }
 
