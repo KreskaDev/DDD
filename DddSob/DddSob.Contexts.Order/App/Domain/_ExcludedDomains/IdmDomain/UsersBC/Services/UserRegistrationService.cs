@@ -10,7 +10,7 @@ using MediatR;
 
 namespace DddSob.Contexts.NoRelation.App.Domain._ExcludedDomains.IdmDomain.UsersBC.Services
 {
-    public class UserRegistrationDirector
+    public class UserRegistrationService
         : IRequestHandler<RegisterUserCommand, Result<User>>
         , IRequestHandler<VerifyUserEmailCommand, Result<User>>
     {
@@ -18,7 +18,7 @@ namespace DddSob.Contexts.NoRelation.App.Domain._ExcludedDomains.IdmDomain.Users
         private readonly IEmailVerificationTokenGenerator _generator;
         private readonly ISystemTime _systemTime;
 
-        public UserRegistrationDirector(
+        public UserRegistrationService(
             IUnitOfWork unitOfWork, 
             IEmailVerificationTokenGenerator generator, 
             ISystemTime systemTime)

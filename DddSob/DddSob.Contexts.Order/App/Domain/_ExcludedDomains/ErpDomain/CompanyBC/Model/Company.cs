@@ -1,10 +1,10 @@
 ﻿using System;
 using System.Threading.Tasks;
 using CSharpFunctionalExtensions;
-using DddSob.Contexts.NoRelation.Domain._ExcludedDomains.ErpDomain.CompanyBC.Events;
+using DddSob.Contexts.NoRelation.App.Domain._ExcludedDomains.ErpDomain.CompanyBC.Events;
 using DddSob.DomainInfra.Model;
 
-namespace DddSob.Contexts.NoRelation.Domain._ExcludedDomains.ErpDomain.CompanyBC.Model
+namespace DddSob.Contexts.NoRelation.App.Domain._ExcludedDomains.ErpDomain.CompanyBC.Model
 {
     public class Company
     : AggregateRootEntity

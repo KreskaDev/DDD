@@ -1,13 +1,10 @@
 ﻿using System;
 using System.Threading.Tasks;
 using CSharpFunctionalExtensions;
-using DddSob.Contexts.NoRelation.Domain.Common.Models;
-using DddSob.Contexts.NoRelation.Domain._ExcludedDomains.ErpDomain.CompanyBC;
-using DddSob.Contexts.NoRelation.Domain._ExcludedDomains.ErpDomain.CompanyBC.Model;
-using DddSob.Contexts.NoRelation.Domain._ExcludedDomains.IdmDomain.TenantsBC.Commands;
-using DddSob.Contexts.NoRelation.Domain._ExcludedDomains.IdmDomain.UsersBC.Commands;
-using DddSob.Contexts.NoRelation.Domain._ExcludedDomains.IdmDomain.UsersBC.Model;
-using DddSob.Contexts.NoRelation.ReadModel;
+using DddSob.Contexts.NoRelation.App.Domain._ExcludedDomains.ErpDomain.CompanyBC;
+using DddSob.Contexts.NoRelation.App.Domain._ExcludedDomains.ErpDomain.CompanyBC.Model;
+using DddSob.Contexts.NoRelation.App.Domain._ExcludedDomains.IdmDomain.UsersBC.Commands;
+using DddSob.Contexts.NoRelation.App.Domain._ExcludedDomains.IdmDomain.UsersBC.Model;
 using FluentAssertions;
 using MediatR;
 using Xunit;

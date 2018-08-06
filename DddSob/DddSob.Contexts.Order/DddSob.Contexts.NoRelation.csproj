@@ -103,7 +103,7 @@
     <Compile Include="App\Domain\_ExcludedDomains\IdmDomain\TenantsBC\Services\TenantCreationDirector.cs" />
     <Compile Include="App\BussinesLogic\IEmailVerificationTokenGenerator.cs" />
     <Compile Include="App\BussinesLogic\IInvitationService.cs" />
-    <Compile Include="App\Domain\_ExcludedDomains\IdmDomain\UsersBC\Services\UserRegistrationDirector.cs" />
+    <Compile Include="App\Domain\_ExcludedDomains\IdmDomain\UsersBC\Services\UserRegistrationService.cs" />
     <Compile Include="App\Domain\_ExcludedDomains\IdmDomain\UsersBC\Model\Email.cs" />
     <Compile Include="App\Domain\_ExcludedDomains\IdmDomain\UsersBC\Model\User.cs" />
     <Compile Include="App\Domain\_ExcludedDomains\IdmDomain\UsersBC\Events\UserRegisteredEvent.cs" />
@@ -113,9 +113,14 @@
     <Compile Include="App\Domain\Common\Services\ISystemTime.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="App\ReadModel\ReadModelOperations.cs" />
-    <Compile Include="ShipmentCargoTraning\Domain\Port.cs" />
-    <Compile Include="ShipmentCargoTraning\Domain\Ship.cs" />
-    <Compile Include="ShipmentCargoTraning\Domain\Shipment.cs" />
+    <Compile Include="ShipmentCargoTraning\Domain\Model\Cargo.cs" />
+    <Compile Include="ShipmentCargoTraning\Domain\Model\Port.cs" />
+    <Compile Include="ShipmentCargoTraning\Domain\Model\Ship.cs" />
+    <Compile Include="ShipmentCargoTraning\Domain\Model\Shipment.cs" />
+    <Compile Include="ShipmentCargoTraning\Domain\Events\NewPortEvent.cs" />
+    <Compile Include="ShipmentCargoTraning\Domain\Events\NewShipEvent.cs" />
+    <Compile Include="ShipmentCargoTraning\Domain\Commands\RegisterNewShipCommand.cs" />
+    <Compile Include="ShipmentCargoTraning\Domain\ShipmentService.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

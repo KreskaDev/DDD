@@ -2,13 +2,12 @@
 using System.Threading;
 using System.Threading.Tasks;
 using CSharpFunctionalExtensions;
-using DddSob.Contexts.NoRelation.BussinesLogic;
-using DddSob.Contexts.NoRelation.Domain._ExcludedDomains.ErpDomain.CompanyBC.Model;
-//using DddSob.Contexts.NoRelation.Domain._ExcludedDomains.ErpDomain.EmployeesBC.Model;
+using DddSob.Contexts.NoRelation.App.Domain._ExcludedDomains.ErpDomain.CompanyBC.Model;
 using DddSob.DomainInfra.UnitOfWork;
 using MediatR;
+//using DddSob.Contexts.NoRelation.Domain._ExcludedDomains.ErpDomain.EmployeesBC.Model;
 
-namespace DddSob.Contexts.NoRelation.Domain._ExcludedDomains.ErpDomain.CompanyBC.Services
+namespace DddSob.Contexts.NoRelation.App.Domain._ExcludedDomains.ErpDomain.CompanyBC.Services
 {
     public class CompanyDirector
     : IRequestHandler<RegisterCompanyCommand, Result<Company>>

@@ -1,7 +1,7 @@
 ﻿using Autofac;
 using DddSob.Contexts.NoRelation;
-using DddSob.Contexts.NoRelation.Domain.Common.Services;
-using DddSob.Contexts.NoRelation.ReadModel;
+using DddSob.Contexts.NoRelation.App.Domain.Common.Services;
+using DddSob.Contexts.NoRelation.App.ReadModel;
 using DddSob.DomainInfra;
 using DddSob.Persistance.LocalDb.Data;
 using DddSob.Storage.Persistance.Nh;
